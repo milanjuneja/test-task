@@ -1,5 +1,7 @@
 package com.task.controller;
 
+import com.task.api.model.LongestDurationMovies;
+import com.task.api.model.MoviesByRatings;
 import com.task.entity.Movies;
 import com.task.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,9 @@ public class MainController {
     private MovieService movieService;
 
     @GetMapping("api/v1/longest-duration-movies")
-    public ResponseEntity<List<Movies>> getTop10LongestDurationMovie(){
+    public ResponseEntity<List<LongestDurationMovies>> getTop10LongestDurationMovie(){
 
-        List<Movies> movies = this.movieService.getTop10LongestDurationMovie();
+        List<LongestDurationMovies> movies = this.movieService.getTop10LongestDurationMovie();
         return ResponseEntity.of(Optional.of(movies));
 
 
@@ -34,8 +36,8 @@ public class MainController {
     }
 
     @GetMapping("api/v1/top-rated-movies")
-    public ResponseEntity<List<Movies>> getMoviesByRatings(){
-        List<Movies> movies = this.movieService.getMoviesByRatings();
+    public ResponseEntity<List<MoviesByRatings>> getMoviesByRatings(){
+        List<MoviesByRatings> movies = this.movieService.getMoviesByRatings();
         return ResponseEntity.of(Optional.of(movies));
     }
 

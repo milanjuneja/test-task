@@ -1,4 +1,6 @@
 package com.task.service;
+import com.task.api.model.LongestDurationMovies;
+import com.task.api.model.MoviesByRatings;
 import com.task.entity.Movies;
 import com.task.repository.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,7 @@ public class MovieServiceImpl implements MovieService{
     private MovieRepo movieRepo;
 
     @Override
-    public List<Movies> getTop10LongestDurationMovie() {
+    public List<LongestDurationMovies> getTop10LongestDurationMovie() {
         return this.movieRepo.getTop10LongestDurationMovie();
     }
 
@@ -22,7 +24,7 @@ public class MovieServiceImpl implements MovieService{
     }
 
     @Override
-    public List<Movies> getMoviesByRatings() {
+    public List<MoviesByRatings> getMoviesByRatings() {
         return this.movieRepo.getMoviesByRatings();
     }
 
